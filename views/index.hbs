@@ -1,0 +1,46 @@
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+  <a class="navbar-brand">Weather</a>
+  <form class="form-inline" action="/" method="GET">
+    <input class="form-control mr-sm-2" type="search" name="city" placeholder="Enter a city name" aria-label="Search" required>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Get Forecast">Search</button>
+  </form>
+</nav>
+
+<div class="container">
+    <div class=" content-title">
+        <h1>{{title}}</h1>
+        <h4>Welcome to {{city}} city</h4>
+    </div>
+</div>
+<div class="container content">
+    <div class=" content-information">
+        <div class="row top-section" >
+            <div class="col-12">
+                {{#if forecast}}
+                <div class="row">
+                    <div class="logo col-6">
+                        <img src="http://openweathermap.org/img/wn/{{forecast.weather.0.icon}}@2x.png" />
+                    </div>
+                    <ul class="info col-6">
+                        <li>Temperature: {{forecast.temp}} °C</li>
+                        <li>Feels like: {{forecast.feels_like}} °C</li>
+                        <li>Humidity: {{forecast.humidity}}</li>
+                        <li>Pressure: {{forecast.pressure}}</li>
+                        {{!-- <li>Sunset: {{forecast.sunset}}</li>
+                        <li>Sunrise: {{forecast.sunrise}}</li> --}}
+                        <li>Description: {{forecast.weather.0.description}}</li>
+                    </ul>
+                </div>
+                {{/if}}
+                <div class="col-12 information">
+                    {{#each hourly}}
+                    <div>
+                        <p>{{dt}}:00</p>
+                        <p>{{temp}}°</p>    
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+    </div>
+</div>
+
