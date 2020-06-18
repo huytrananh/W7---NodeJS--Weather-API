@@ -3,7 +3,6 @@ body {
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   /* background-color: grey; */
-  background-image: url(https://images8.alphacoders.com/684/684190.jpg);
 }
 
 a {
@@ -49,9 +48,7 @@ a {
   justify-content: space-evenly;
   margin: 20px 0 0 0;
 }
-ul{
-  /* margin-bottom: 0; */
-}
+
 li{
   list-style-type: none;
 }
